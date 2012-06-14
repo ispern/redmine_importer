@@ -410,7 +410,7 @@ class ImporterController < ApplicationController
       next if watcher_failed_count > 0
 
       if (!issue.save)
-        # 记录错误
+        # log errors
         @failed_count += 1
         @failed_issues[@failed_count] = row
         flash.append(:warning,"The following data-validation errors occurred on issue #{@failed_count} in the list below")
