@@ -9,5 +9,6 @@ Redmine::Plugin.register :redmine_importer do
   project_module :importer do
     permission :import, :importer => :index
   end
-  menu :project_menu, :importer, { :controller => 'importer', :action => 'index' }, :caption => :label_import, :before => :settings, :param => :project_id
+  require 'outer_safety_encoding_patch'
+  menu :project_menu, :importer, {:controller => 'importer', :action => 'index'}, :caption => :label_import, :before => :settings, :param => :project_id
 end
