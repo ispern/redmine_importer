@@ -12,7 +12,7 @@
 <hr/>
 
 <% if @failed_count > 0 %>
-    <%= l(:label_result_failed, @failed_count) %>
+    <%= l(:label_result_failed, :fail_count => @failed_count) %>
     <table class="list">
       <thead>
       <tr>
